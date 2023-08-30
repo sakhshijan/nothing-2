@@ -11,7 +11,7 @@ function ImageCover() {
   return (
     <Tween from={from} to={to} position={1}>
       <Image
-        className="pointer-events-none absolute left-0 top-0 z-10 h-screen w-full object-cover object-center"
+        className="pointer-events-none absolute left-0 top-0 z-[3] h-screen w-full object-cover object-center"
         src="/images/phone-cover.webp"
         draggable={false}
         alt="Phone cover"
@@ -27,7 +27,7 @@ function PhoneName() {
   const to = { opacity: 0, x: "-15%" };
   return (
     <Tween from={from} to={to} position={1}>
-      <div className="pointer-events-none absolute top-0 z-20 flex min-h-screen w-full items-center ">
+      <div className="pointer-events-none absolute top-0 z-[4] flex min-h-screen w-full items-center ">
         <div className={`${Ndot55.className} mr-auto w-1/2`}>
           <h2 className="pr-16 text-right text-3xl text-[10rem] uppercase text-black">
             Phone
@@ -42,7 +42,7 @@ function ThePhone() {
   const from = { scale: 3.9, y: "56.5%", rotation: 90, x: "-370%" };
   const to = { scale: 1, y: 0, rotation: 0, x: 0 };
   return (
-    <div className="flex w-1/2 items-center justify-center">
+    <div className="z-[1] flex w-1/2 items-center justify-center">
       <Tween from={from} to={to}>
         <Image
           draggable={false}
@@ -62,7 +62,7 @@ function CameraCover() {
   const to = { opacity: 0 };
   return (
     <Tween from={from} to={to}>
-      <div className="pointer-events-none absolute left-0 top-0 z-10 min-h-screen w-full bg-neutral-950" />
+      <div className="pointer-events-none absolute left-0 top-0 z-[2] min-h-screen w-full bg-neutral-950" />
     </Tween>
   );
 }
@@ -71,7 +71,7 @@ function PhoneDetailCard() {
   const from = { opacity: 0 };
   const to = { opacity: 1 };
   return (
-    <Tween from={from} to={to}>
+    <Tween from={from} to={to} position={3}>
       <PhoneAddToCard />
     </Tween>
   );
