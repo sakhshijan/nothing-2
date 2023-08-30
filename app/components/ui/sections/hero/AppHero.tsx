@@ -27,9 +27,9 @@ function PhoneName() {
   const to = { opacity: 0, x: "-15%" };
   return (
     <Tween from={from} to={to} position={1}>
-      <div className="pointer-events-none absolute z-20 flex min-h-screen w-full items-center">
+      <div className="pointer-events-none absolute top-0 z-20 flex min-h-screen w-full items-center ">
         <div className={`${Ndot55.className} mr-auto w-1/2`}>
-          <h2 className="mt-6 pr-16 text-right text-3xl text-[10rem] uppercase text-black">
+          <h2 className="pr-16 text-right text-3xl text-[10rem] uppercase text-black">
             Phone
           </h2>
         </div>
