@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import { BiSolidStar } from "react-icons/bi";
+import { RxDotFilled } from "react-icons/rx";
 
 export function Chip({
   children,
@@ -46,11 +48,23 @@ function ColorChip({
   );
 }
 
+function ReviewCard() {
+  return (
+    <div className="flex gap-2 text-2xl text-gray-50">
+      <BiSolidStar className="text-yellow-400" />
+      <span>8/10</span>
+      <RxDotFilled className={"mt-1"} />
+      <span>15 برسی</span>
+    </div>
+  );
+}
+
 const PhoneAddToCard = () => {
   return (
     <>
       <h2 className="text-heading font-light text-gray-50">ناتینگ فون 2</h2>
-      <ul className="text-body text-neutral-500">
+      <ReviewCard />
+      <ul className="mt-5 text-body text-neutral-500">
         <li>رم: 12گیگابایت</li>
         <li>پردازنده: Snapdragon 8+ Gen 1</li>
         <li>صفحه نمایش: LTPO OLED</li>
