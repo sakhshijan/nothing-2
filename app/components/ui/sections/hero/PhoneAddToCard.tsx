@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-function Chip({
+export function Chip({
   children,
   checked,
   value,
@@ -12,14 +12,7 @@ function Chip({
 }) {
   return (
     <label className="relative z-0 flex h-16 cursor-pointer items-center px-8 pt-1 text-body text-gray-50">
-      <input
-        checked={checked}
-        type="radio"
-        className="peer"
-        name="class"
-        value={value}
-        hidden
-      />
+      <input type="radio" className="peer" name="class" value={value} hidden />
       <div className="absolute inset-0 rounded-2xl border-2 border-neutral-600 transition-all duration-300 peer-checked:border-dashed peer-checked:border-gray-50 peer-checked:bg-neutral-800"></div>
       <span className="relative">{children}</span>
     </label>
@@ -28,7 +21,7 @@ function Chip({
 
 const PhoneAddToCard = () => {
   return (
-    <div className="flex w-1/2 flex-col">
+    <>
       <h2 className="text-heading font-light text-gray-50">ناتینگ فون 2</h2>
       <ul className="text-body text-neutral-500">
         <li>رم: 12گیگابایت</li>
@@ -39,12 +32,10 @@ const PhoneAddToCard = () => {
       </ul>
       <div className="mt-5 flex flex-wrap gap-5">
         <Chip value={"1"}>128GB+8</Chip>
-        <Chip value={"2"} checked>
-          256GB+12
-        </Chip>
+        <Chip value={"2"}>256GB+12</Chip>
         <Chip value={"3"}>512GB+12</Chip>
       </div>
-    </div>
+    </>
   );
 };
 

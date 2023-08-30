@@ -68,11 +68,13 @@ function CameraCover() {
 }
 
 function PhoneDetailCard() {
-  const from = { opacity: 0 };
-  const to = { opacity: 1 };
+  const from = { opacity: 0, y: 32 };
+  const to = { opacity: 1, y: 0 };
   return (
-    <Tween from={from} to={to} position={3}>
-      <PhoneAddToCard />
+    <Tween from={from} to={to} position={2}>
+      <div className="flex w-1/2 flex-col">
+        <PhoneAddToCard />
+      </div>
     </Tween>
   );
 }
