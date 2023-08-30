@@ -8,9 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#ff6600",
+      },
       fontSize: {
         heading: "3.625rem",
         body: "1.065rem",
+        action: "1.925rem",
       },
       fontFamily: {
         kalameh: ["KalamehWebFaNum"],

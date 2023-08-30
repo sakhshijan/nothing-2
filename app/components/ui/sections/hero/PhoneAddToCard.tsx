@@ -84,6 +84,17 @@ const PhoneAddToCard = () => {
           سفید
         </ColorChip>
       </div>
+
+      <div className="flex flex-wrap gap-5 text-gray-50">
+        <div className="flex h-16 items-center justify-center gap-2 rounded-2xl border border-neutral-700 px-8 text-action font-medium">
+          {(37900000).toLocaleString()}
+          <span className="mt-2 text-body font-medium">تومان</span>
+        </div>
+
+        <button className="flex h-16 items-center justify-center gap-2 rounded-2xl bg-primary px-8 text-xl font-medium">
+          افزودن به سبد
+        </button>
+      </div>
     </>
   );
 };
