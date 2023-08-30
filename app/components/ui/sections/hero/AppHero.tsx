@@ -87,7 +87,7 @@ const AppHero = () => {
     >
       {(progress: number) => (
         <div className="flex min-h-screen w-full select-none items-center justify-center overflow-hidden">
-          <Timeline duration={3000} totalProgress={progress}>
+          <Timeline paused duration={3000} totalProgress={progress}>
             <CameraCover />
             <div className="container mx-auto flex min-h-screen items-center gap-10">
               <ThePhone />
