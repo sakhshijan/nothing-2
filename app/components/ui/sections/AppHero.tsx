@@ -13,7 +13,7 @@ function ImageCover() {
       duration={900}
     >
       <Image
-        className="absolute left-0 top-0 z-10 w-full"
+        className="absolute left-0 top-0 z-10 h-screen w-full object-cover object-center"
         src="/images/phone-cover.webp"
         alt="Phone cover"
         height="960"
@@ -50,7 +50,7 @@ function ThePhone() {
       <Image
         className="w-64"
         src="/images/phone.webp"
-        alt="Phone cover"
+        alt="Nothing phone 2"
         height="960"
         width="1980"
       />
