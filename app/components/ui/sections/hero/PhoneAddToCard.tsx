@@ -12,7 +12,7 @@ export function Chip({
   return (
     <label className="relative z-0 flex h-16 cursor-pointer items-center px-8 pt-1 text-body text-gray-50">
       <input type="radio" className="peer" name="class" value={value} hidden />
-      <div className="absolute inset-0 rounded-2xl border-2 border-neutral-600 transition-all duration-300 peer-checked:border-dashed peer-checked:border-gray-50 peer-checked:bg-neutral-800"></div>
+      <div className="absolute inset-0 rounded-2xl border-2 border-neutral-600 transition-all duration-300 peer-checked:border-dashed peer-checked:border-gray-50 peer-checked:bg-neutral-900"></div>
       <span className="relative">{children}</span>
     </label>
   );
@@ -33,7 +33,7 @@ function ColorChip({
     <label className="relative z-0 flex h-16 cursor-pointer items-center gap-3 pt-1 text-body text-gray-50">
       <input type="radio" className="peer" name="color" value={value} hidden />
       <div
-        className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-gray-400 after:absolute after:mb-1 after:h-5 after:w-3 after:rotate-90 after:scale-0  after:border-b-4 after:border-r-4 after:border-[--border-color] after:opacity-0 after:transition-all after:duration-200 peer-checked:after:rotate-45 peer-checked:after:scale-100 peer-checked:after:opacity-100"
+        className="after: flex h-10 w-10 items-center justify-center rounded-full border-2 border-gray-400 after:absolute after:mb-1 after:h-4 after:w-2 after:rotate-90 after:scale-0  after:border-b-2 after:border-r-2 after:border-[--border-color] after:opacity-0 after:transition-all after:duration-200 peer-checked:after:rotate-45 peer-checked:after:scale-100 peer-checked:after:opacity-100"
         style={
           {
             backgroundColor: color,
