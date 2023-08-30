@@ -30,7 +30,7 @@ function ColorChip({
   onColor?: string;
 }) {
   return (
-    <label className="relative z-0 flex h-16 cursor-pointer items-center gap-3 px-5 pt-1 text-body text-gray-50">
+    <label className="relative z-0 flex h-16 cursor-pointer items-center gap-3 pt-1 text-body text-gray-50">
       <input type="radio" className="peer" name="color" value={value} hidden />
       <div
         className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-gray-400 after:absolute after:mb-1 after:h-5 after:w-3 after:rotate-90 after:scale-0  after:border-b-4 after:border-r-4 after:border-[--border-color] after:opacity-0 after:transition-all after:duration-200 peer-checked:after:rotate-45 peer-checked:after:scale-100 peer-checked:after:opacity-100"
@@ -62,7 +62,7 @@ const PhoneAddToCard = () => {
         <Chip value={"2"}>256GB+12</Chip>
         <Chip value={"3"}>512GB+12</Chip>
       </div>
-      <div className="mt-5 flex flex-wrap gap-5">
+      <div className="mt-5 flex flex-wrap gap-8">
         <ColorChip value={"with"} color="#fff" onColor="#000">
           مشکی
         </ColorChip>
