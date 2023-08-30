@@ -72,7 +72,7 @@ function PhoneDetailCard() {
   const to = { opacity: 1, y: 0 };
   return (
     <Tween from={from} to={to} position={2}>
-      <div className="flex w-1/2 flex-col">
+      <div className="flex w-1/2 flex-col gap-5">
         <PhoneAddToCard />
       </div>
     </Tween>

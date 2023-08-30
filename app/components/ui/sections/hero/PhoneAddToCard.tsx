@@ -50,7 +50,7 @@ function ColorChip({
 
 function ReviewCard() {
   return (
-    <div className="flex gap-2 text-2xl text-gray-50">
+    <div className="-mt-5 flex gap-2 text-2xl text-gray-50">
       <BiSolidStar className="text-yellow-400" />
       <span>8/10</span>
       <RxDotFilled className={"mt-1"} />
@@ -64,28 +64,28 @@ const PhoneAddToCard = () => {
     <>
       <h2 className="text-heading font-light text-gray-50">ناتینگ فون 2</h2>
       <ReviewCard />
-      <ul className="mt-5 text-body text-neutral-500">
+      <ul className="text-body text-neutral-500">
         <li>رم: 12گیگابایت</li>
         <li>پردازنده: Snapdragon 8+ Gen 1</li>
         <li>صفحه نمایش: LTPO OLED</li>
         <li>باطری: 4700 میلی آمپر ساعت</li>
         <li>دوربین: 50/50مگاپیکسل</li>
       </ul>
-      <div className="mt-5 flex flex-wrap gap-5">
+      <div className=" flex flex-wrap gap-5">
         <Chip value={"1"}>128GB+8</Chip>
         <Chip value={"2"}>256GB+12</Chip>
         <Chip value={"3"}>512GB+12</Chip>
       </div>
-      <div className="mt-5 flex flex-wrap gap-8">
-        <ColorChip value={"with"} color="#fff" onColor="#000">
+      <div className=" flex flex-wrap gap-8">
+        <ColorChip value={"black"} color="#000" onColor="#fff">
           مشکی
         </ColorChip>
-        <ColorChip value={"black"} color="#000" onColor="#fff">
+        <ColorChip value={"with"} color="#fff" onColor="#000">
           سفید
         </ColorChip>
       </div>
 
-      <div className="flex flex-wrap gap-5 text-gray-50">
+      <div className="mt-5 flex flex-wrap gap-5 text-gray-50">
         <div className="flex h-16 items-center justify-center gap-2 rounded-2xl border border-neutral-700 px-8 text-action font-medium">
           {(37900000).toLocaleString()}
           <span className="mt-2 text-body font-medium">تومان</span>
