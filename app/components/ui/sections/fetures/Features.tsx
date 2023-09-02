@@ -57,8 +57,8 @@ function TheFeatures() {
 }
 
 function PhoneFront() {
-  const from = { x: "-50%", opacity: 0.5 };
-  const to = { x: 0, opacity: 1 };
+  const from = { x: "-100%", y: "-150%" };
+  const to = { x: 0, y: 0 };
   return (
     <Tween from={from} to={to} position={0}>
       <div className="flex w-1/2 justify-end">
