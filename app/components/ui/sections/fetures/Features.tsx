@@ -25,7 +25,7 @@ function WomanHand() {
     <Tween from={from} to={to} position={0}>
       <div className="absolute inset-0 left-0 top-0 flex items-center">
         <Image
-          className="absolute -right-[36%] mt-[15%]"
+          className="absolute -right-[37%] mt-[8%]"
           src="/images/woman-hand.webp"
           draggable={false}
           width={1510}
@@ -75,7 +75,22 @@ function PhoneFront() {
 }
 
 function PhoneDetails() {
-  return <div className="w-full flex-col">Hello world</div>;
+  return (
+    <div className="mt-auto w-full flex-col">
+      <div>
+        <p className="text-body font-light">
+          شرکت ناتینگ همین چند روز گذشته از گوشی جدید خود یعنی ناتینگ فون 2
+          رونمایی کرد. گوشی ناتینگ فون 1 یکی از جنجالی‌ترین گوشی‌هایی بود که در
+          سال 2022 شاهد آن بودیم. این گوشی موبایل با طراحی منحصر به فرد و جذابیت
+          ظاهری بسیار زیاد، نظر بسیاری از کاربران را به سمت خود جلب کرد. اکنون
+          سری دوم این گوشی یعنی گوشی Nothing Phone 2در شرف عرضه به بازار است.
+          طبق آنچه در مراسم رونمایی گذشت ناتیگ فون 2 به تراشه جدید اسنپدراگون
+          سری 8 کوالکام مجهز شده است که نشان از قدرت بالای این گوشی است. در
+          ادامه به مشخصات بیشتر گوشی جدید ناتینگ خواهیم پرداخت.
+        </p>
+      </div>
+    </div>
+  );
 }
 
 const Features = () => {
@@ -92,9 +107,11 @@ const Features = () => {
             <PhoneBanner />
             <WomanHand />
             <div className="relative flex min-h-screen flex-1">
-              <div className="container mx-auto flex flex-wrap items-center">
-                <PhoneFront />
-                <TheFeatures />
+              <div className="container mx-auto flex flex-col justify-center">
+                <div className="mt-auto flex w-full items-center">
+                  <PhoneFront />
+                  <TheFeatures />
+                </div>
                 <PhoneDetails />
               </div>
             </div>
