@@ -10,7 +10,7 @@ function PhoneBanner() {
   return (
     <Tween from={from} to={to} position={0}>
       <div
-        className={`${Ndot55.className} absolute inset-0 flex items-center justify-center text-[24rem] uppercase opacity-30`}
+        className={`${Ndot55.className} absolute left-0 right-0 top-0 flex min-h-screen items-center justify-center text-[24rem] uppercase opacity-30`}
       >
         Phone
       </div>
@@ -23,7 +23,7 @@ function WomanHand() {
   const to = { x: 0, rotation: 0, y: 0 };
   return (
     <Tween from={from} to={to} position={0}>
-      <div className="absolute inset-0 left-0 top-0 flex items-center">
+      <div className="absolute left-0 right-0 top-0 flex min-h-screen items-center">
         <Image
           className="absolute -right-[37%] mt-[8%]"
           src="/images/woman-hand.webp"
@@ -74,11 +74,81 @@ function PhoneFront() {
   );
 }
 
+function NothingOs() {
+  return (
+    <div className="flex w-[11.625rem] flex-col gap-5">
+      <Image
+        className="aspect-square w-full"
+        src={"/images/nothing-os-2.webp"}
+        alt="Snapdragon 8"
+        height={141}
+        width={141}
+        draggable={false}
+      />
+      <div className="flex flex-col items-center justify-center gap-1">
+        <h3 className="text-3xl font-medium">سیستم عامل</h3>
+        <span className="text-center text-xl font-extralight">
+          جدید ترین
+          <br />
+          سیستم عامل ناتینگ
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function CameraProperties() {
+  return (
+    <div className="flex w-[11.625rem] flex-col gap-5">
+      <Image
+        className="aspect-square w-full"
+        src={"/images/50mp-camera.webp"}
+        alt="Snapdragon 8"
+        height={141}
+        width={141}
+        draggable={false}
+      />
+      <div className="flex flex-col items-center justify-center gap-1">
+        <h3 className="text-3xl font-medium">دوربین</h3>
+        <span className="text-center text-xl font-extralight">
+          2 دوربین 50 مگاپیکسلی
+        </span>
+      </div>
+    </div>
+  );
+}
+
+function ChipsetProperties() {
+  return (
+    <div className="flex w-[11.625rem] flex-col gap-5">
+      <Image
+        className="aspect-square w-full"
+        src={"/images/snapdragon-8.webp"}
+        alt="Snapdragon 8"
+        height={141}
+        width={141}
+        draggable={false}
+      />
+      <div className="flex flex-col items-center justify-center gap-1">
+        <h3 className="text-3xl font-medium">پردازنده</h3>
+        <span className="text-center text-xl font-extralight">
+          بروز ترین پردازنده
+        </span>
+      </div>
+    </div>
+  );
+}
+
 function PhoneDetails() {
   return (
-    <div className="mt-auto w-full flex-col">
+    <div className="mt-40 flex w-full flex-col gap-24 pb-32">
+      <div className="flex justify-center gap-16">
+        <ChipsetProperties />
+        <CameraProperties />
+        <NothingOs />
+      </div>
       <div>
-        <p className="text-body font-light">
+        <p className="text-center text-body font-light">
           شرکت ناتینگ همین چند روز گذشته از گوشی جدید خود یعنی ناتینگ فون 2
           رونمایی کرد. گوشی ناتینگ فون 1 یکی از جنجالی‌ترین گوشی‌هایی بود که در
           سال 2022 شاهد آن بودیم. این گوشی موبایل با طراحی منحصر به فرد و جذابیت
@@ -102,13 +172,13 @@ const Features = () => {
       triggerHook="onLeave"
     >
       {(progress: number) => (
-        <section className="relative flex min-h-screen overflow-hidden bg-gray-50">
+        <section className="relative flex min-h-screen overflow-hidden bg-white">
           <Timeline paused totalProgress={progress}>
             <PhoneBanner />
             <WomanHand />
             <div className="relative flex min-h-screen flex-1">
-              <div className="container mx-auto flex flex-col justify-center">
-                <div className="mt-auto flex w-full items-center">
+              <div className="container mx-auto flex flex-col justify-center pt-[8%]">
+                <div className="flex w-full items-center">
                   <PhoneFront />
                   <TheFeatures />
                 </div>
