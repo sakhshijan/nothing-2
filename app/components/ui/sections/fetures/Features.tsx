@@ -100,7 +100,7 @@ function PhoneDetails() {
   const to = { opacity: 1 };
   return (
     <Tween from={from} to={to} position={1}>
-      <div className="mt-40 flex w-full flex-col gap-24 pb-32">
+      <div className="mt-40 flex w-full flex-col gap-44 pb-32">
         <div className="flex justify-center gap-16">
           <PropertiesCard
             imageAlt="Snapdragon 8"
