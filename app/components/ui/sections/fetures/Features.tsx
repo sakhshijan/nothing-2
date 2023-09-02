@@ -96,41 +96,45 @@ function PropertiesCard({ image, title, imageAlt, caption }: any) {
 }
 
 function PhoneDetails() {
+  const from = { opacity: 0 };
+  const to = { opacity: 1 };
   return (
-    <div className="mt-40 flex w-full flex-col gap-24 pb-32">
-      <div className="flex justify-center gap-16">
-        <PropertiesCard
-          imageAlt="Snapdragon 8"
-          image="/images/snapdragon-8.webp"
-          caption="بروز ترین پردازنده"
-          title="پردازنده"
-        />
-        <PropertiesCard
-          imageAlt="50MP Camera"
-          image="/images/50mp-camera.webp"
-          caption="2 دوربین 50 مگاپیکسلی"
-          title="دوربین"
-        />
-        <PropertiesCard
-          imageAlt={"Nothing os 2"}
-          image={"/images/nothing-os-2.webp"}
-          title="سیستم عامل"
-          caption={"جدید ترین\n سیستم عامل ناتینگ"}
-        />
+    <Tween from={from} to={to} position={1}>
+      <div className="mt-40 flex w-full flex-col gap-24 pb-32">
+        <div className="flex justify-center gap-16">
+          <PropertiesCard
+            imageAlt="Snapdragon 8"
+            image="/images/snapdragon-8.webp"
+            caption="بروز ترین پردازنده"
+            title="پردازنده"
+          />
+          <PropertiesCard
+            imageAlt="50MP Camera"
+            image="/images/50mp-camera.webp"
+            caption="2 دوربین 50 مگاپیکسلی"
+            title="دوربین"
+          />
+          <PropertiesCard
+            imageAlt={"Nothing os 2"}
+            image={"/images/nothing-os-2.webp"}
+            title="سیستم عامل"
+            caption={"جدید ترین\n سیستم عامل ناتینگ"}
+          />
+        </div>
+        <div>
+          <p className="text-center text-body font-light">
+            شرکت ناتینگ همین چند روز گذشته از گوشی جدید خود یعنی ناتینگ فون 2
+            رونمایی کرد. گوشی ناتینگ فون 1 یکی از جنجالی‌ترین گوشی‌هایی بود که
+            در سال 2022 شاهد آن بودیم. این گوشی موبایل با طراحی منحصر به فرد و
+            جذابیت ظاهری بسیار زیاد، نظر بسیاری از کاربران را به سمت خود جلب
+            کرد. اکنون سری دوم این گوشی یعنی گوشی Nothing Phone 2در شرف عرضه به
+            بازار است. طبق آنچه در مراسم رونمایی گذشت ناتیگ فون 2 به تراشه جدید
+            اسنپدراگون سری 8 کوالکام مجهز شده است که نشان از قدرت بالای این گوشی
+            است. در ادامه به مشخصات بیشتر گوشی جدید ناتینگ خواهیم پرداخت.
+          </p>
+        </div>
       </div>
-      <div>
-        <p className="text-center text-body font-light">
-          شرکت ناتینگ همین چند روز گذشته از گوشی جدید خود یعنی ناتینگ فون 2
-          رونمایی کرد. گوشی ناتینگ فون 1 یکی از جنجالی‌ترین گوشی‌هایی بود که در
-          سال 2022 شاهد آن بودیم. این گوشی موبایل با طراحی منحصر به فرد و جذابیت
-          ظاهری بسیار زیاد، نظر بسیاری از کاربران را به سمت خود جلب کرد. اکنون
-          سری دوم این گوشی یعنی گوشی Nothing Phone 2در شرف عرضه به بازار است.
-          طبق آنچه در مراسم رونمایی گذشت ناتیگ فون 2 به تراشه جدید اسنپدراگون
-          سری 8 کوالکام مجهز شده است که نشان از قدرت بالای این گوشی است. در
-          ادامه به مشخصات بیشتر گوشی جدید ناتینگ خواهیم پرداخت.
-        </p>
-      </div>
-    </div>
+    </Tween>
   );
 }
 
