@@ -18,7 +18,7 @@ function PhoneBanner() {
   );
 }
 
-function TheHand() {
+function WomanHand() {
   const from = { x: "40%", rotation: 25, y: "45" };
   const to = { x: 0, rotation: 0, y: 0 };
   return (
@@ -57,8 +57,8 @@ function TheFeatures() {
 }
 
 function PhoneFront() {
-  const from = { x: "-50%" };
-  const to = { x: 0 };
+  const from = { x: "-50%", opacity: 0.5 };
+  const to = { x: 0, opacity: 1 };
   return (
     <Tween from={from} to={to} position={0}>
       <div className="flex w-1/2 justify-end">
@@ -90,7 +90,7 @@ const Features = () => {
         <section className="relative flex min-h-screen overflow-hidden bg-gray-50">
           <Timeline paused totalProgress={progress}>
             <PhoneBanner />
-            <TheHand />
+            <WomanHand />
             <div className="relative flex min-h-screen flex-1">
               <div className="container mx-auto flex flex-wrap items-center">
                 <PhoneFront />
