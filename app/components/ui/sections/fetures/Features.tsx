@@ -74,65 +74,21 @@ function PhoneFront() {
   );
 }
 
-function NothingOs() {
+function PropertiesCard({ image, title, imageAlt, caption }: any) {
   return (
     <div className="flex w-[11.625rem] flex-col gap-5">
       <Image
         className="aspect-square w-full"
-        src={"/images/nothing-os-2.webp"}
-        alt="Snapdragon 8"
+        src={image}
+        alt={imageAlt}
         height={141}
         width={141}
         draggable={false}
       />
       <div className="flex flex-col items-center justify-center gap-1">
-        <h3 className="text-3xl font-medium">سیستم عامل</h3>
-        <span className="text-center text-xl font-extralight">
-          جدید ترین
-          <br />
-          سیستم عامل ناتینگ
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function CameraProperties() {
-  return (
-    <div className="flex w-[11.625rem] flex-col gap-5">
-      <Image
-        className="aspect-square w-full"
-        src={"/images/50mp-camera.webp"}
-        alt="Snapdragon 8"
-        height={141}
-        width={141}
-        draggable={false}
-      />
-      <div className="flex flex-col items-center justify-center gap-1">
-        <h3 className="text-3xl font-medium">دوربین</h3>
-        <span className="text-center text-xl font-extralight">
-          2 دوربین 50 مگاپیکسلی
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function ChipsetProperties() {
-  return (
-    <div className="flex w-[11.625rem] flex-col gap-5">
-      <Image
-        className="aspect-square w-full"
-        src={"/images/snapdragon-8.webp"}
-        alt="Snapdragon 8"
-        height={141}
-        width={141}
-        draggable={false}
-      />
-      <div className="flex flex-col items-center justify-center gap-1">
-        <h3 className="text-3xl font-medium">پردازنده</h3>
-        <span className="text-center text-xl font-extralight">
-          بروز ترین پردازنده
+        <h3 className="text-3xl font-medium">{title}</h3>
+        <span className="whitespace-pre-line text-center text-xl font-extralight">
+          {caption}
         </span>
       </div>
     </div>
@@ -143,9 +99,24 @@ function PhoneDetails() {
   return (
     <div className="mt-40 flex w-full flex-col gap-24 pb-32">
       <div className="flex justify-center gap-16">
-        <ChipsetProperties />
-        <CameraProperties />
-        <NothingOs />
+        <PropertiesCard
+          imageAlt="Snapdragon 8"
+          image="/images/snapdragon-8.webp"
+          caption="بروز ترین پردازنده"
+          title="پردازنده"
+        />
+        <PropertiesCard
+          imageAlt="50MP Camera"
+          image="/images/50mp-camera.webp"
+          caption="2 دوربین 50 مگاپیکسلی"
+          title="دوربین"
+        />
+        <PropertiesCard
+          imageAlt={"Nothing os 2"}
+          image={"/images/nothing-os-2.webp"}
+          title="سیستم عامل"
+          caption={"جدید ترین\n سیستم عامل ناتینگ"}
+        />
       </div>
       <div>
         <p className="text-center text-body font-light">
