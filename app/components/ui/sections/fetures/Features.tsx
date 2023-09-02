@@ -6,7 +6,7 @@ import { Timeline, Tween } from "react-gsap";
 
 function PhoneBanner() {
   const from = { x: "-100%", opacity: 0.3 };
-  const to = { x: 0, opacity: 0.1 };
+  const to = { x: 0, opacity: 0.05 };
   return (
     <Tween from={from} to={to} position={0}>
       <div
@@ -38,17 +38,21 @@ function TheHand() {
 }
 
 function TheFeatures() {
+  const from = { opacity: 0 };
+  const to = { opacity: 1 };
   return (
-    <div className="flex w-1/2 flex-col gap-10 text-neutral-900">
-      <h3 className="text-heading font-medium">رابط جدید Glyph</h3>
-      <p className="max-w-sm text-body font-light">
-        برای دنیایی با زمان بیشتر برای خودم و زمان کمتری روی صفحه نمایش، رابط
-        Glyph را ایجاد کردیم. برای هر نوع تماس یا نوتیفیکیشن، توالی‌های نورانی و
-        صوتی متفاوتی را اختصاص دهید و از افرادی که با شما تماس می‌گیرند، یک شروع
-        داشته باشید. اطلاعات کلیدی در یک نگاه. راهی برای حضور در گوشی بدون حضور
-        در گوشی.
-      </p>
-    </div>
+    <Tween from={from} to={to} position={1}>
+      <div className="flex w-1/2 flex-col gap-10 text-neutral-900">
+        <h3 className="text-heading font-medium">رابط جدید Glyph</h3>
+        <p className="max-w-sm text-body font-light">
+          برای دنیایی با زمان بیشتر برای خودم و زمان کمتری روی صفحه نمایش، رابط
+          Glyph را ایجاد کردیم. برای هر نوع تماس یا نوتیفیکیشن، توالی‌های نورانی
+          و صوتی متفاوتی را اختصاص دهید و از افرادی که با شما تماس می‌گیرند، یک
+          شروع داشته باشید. اطلاعات کلیدی در یک نگاه. راهی برای حضور در گوشی
+          بدون حضور در گوشی.
+        </p>
+      </div>
+    </Tween>
   );
 }
 
@@ -57,15 +61,21 @@ function PhoneFront() {
   const to = { x: 0 };
   return (
     <Tween from={from} to={to} position={0}>
-      <Image
-        draggable={false}
-        width={370}
-        height={570}
-        src="/images/nothing-front.webp"
-        alt="Nothing phone - front"
-      />
+      <div className="flex w-1/2 justify-end">
+        <Image
+          draggable={false}
+          width={370}
+          height={570}
+          src="/images/nothing-front.webp"
+          alt="Nothing phone - front"
+        />
+      </div>
     </Tween>
   );
+}
+
+function PhoneDetails() {
+  return <div className="w-full flex-col">Hello world</div>;
 }
 
 const Features = () => {
@@ -83,10 +93,9 @@ const Features = () => {
             <TheHand />
             <div className="relative flex min-h-screen flex-1">
               <div className="container mx-auto flex flex-wrap items-center">
-                <div className="flex w-1/2 justify-end">
-                  <PhoneFront />
-                </div>
+                <PhoneFront />
                 <TheFeatures />
+                <PhoneDetails />
               </div>
             </div>
           </Timeline>
