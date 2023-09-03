@@ -19,10 +19,11 @@ const Colored = () => {
     <section className="flex min-h-screen items-center py-44">
       <div className="container mx-auto flex flex-col">
         <div className="relative flex h-96 flex-row-reverse">
-          <div className="absolute inset-0 flex">
+          <div className="absolute inset-0 flex gap-5">
             {images.map((name) => (
               <div className="flex flex-1 justify-center">
                 <Image
+                  draggable={false}
                   width={210}
                   height={430}
                   className="object-contain object-center"
@@ -32,10 +33,11 @@ const Colored = () => {
               </div>
             ))}
           </div>
-          <div className="absolute inset-0 flex">
+          <div className="absolute inset-0 flex gap-5">
             {images.map((name) => (
               <div className="flex flex-1 justify-center">
                 <Image
+                  draggable={false}
                   width={210}
                   height={430}
                   className="object-contain object-center"
@@ -65,7 +67,7 @@ const Colored = () => {
         </div>
 
         <div className="mt-52">
-          <p className="text-justify text-body font-light text-gray-50">
+          <p className="text-justify text-body font-light text-gray-50 selection:bg-gray-50 selection:text-neutral-950">
             در مورد این مورد رابط Glyph جدید: اطلاعات کلیدی در یک لحظه. توالی
             های مختلف نور و صدا را به هر مخاطب و نوع اعلان اختصاص دهید. از چراغ
             ها برای ردیابی تکامل یا ایجاد آهنگ های زنگ با Glyph Composer استفاده

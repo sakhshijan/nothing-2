@@ -42,7 +42,7 @@ function TheFeatures() {
   const to = { opacity: 1 };
   return (
     <Tween from={from} to={to} position={1}>
-      <div className="flex w-1/2 flex-col gap-10 text-neutral-900">
+      <div className="flex w-1/2 flex-col gap-10 text-neutral-900  selection:bg-neutral-950 selection:text-gray-50">
         <h3 className="text-heading font-medium">رابط جدید Glyph</h3>
         <p className="max-w-sm text-body font-light">
           برای دنیایی با زمان بیشتر برای خودم و زمان کمتری روی صفحه نمایش، رابط
@@ -76,9 +76,9 @@ function PhoneFront() {
 
 function PropertiesCard({ image, title, imageAlt, caption }: any) {
   return (
-    <div className="flex w-[11.625rem] flex-col gap-5">
+    <div className="flex w-[11.625rem] flex-col gap-5  selection:bg-neutral-950 selection:text-gray-50">
       <Image
-        className="aspect-square w-full"
+        className="aspect-square w-full select-none"
         src={image}
         alt={imageAlt}
         height={141}
@@ -122,7 +122,7 @@ function PhoneDetails() {
           />
         </div>
         <div>
-          <p className="text-center text-body font-light">
+          <p className="text-center text-body font-light selection:bg-neutral-950 selection:text-gray-50">
             شرکت ناتینگ همین چند روز گذشته از گوشی جدید خود یعنی ناتینگ فون 2
             رونمایی کرد. گوشی ناتینگ فون 1 یکی از جنجالی‌ترین گوشی‌هایی بود که
             در سال 2022 شاهد آن بودیم. این گوشی موبایل با طراحی منحصر به فرد و
