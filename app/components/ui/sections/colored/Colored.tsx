@@ -21,7 +21,7 @@ const Colored = () => {
         <div className="relative flex h-96 flex-row-reverse">
           <div className="absolute inset-0 flex gap-5">
             {images.map((name) => (
-              <div className="flex flex-1 justify-center">
+              <div className="flex flex-1 justify-center" key={name}>
                 <Image
                   draggable={false}
                   width={210}
@@ -35,7 +35,7 @@ const Colored = () => {
           </div>
           <div className="absolute inset-0 flex gap-5">
             {images.map((name) => (
-              <div className="flex flex-1 justify-center">
+              <div className="flex flex-1 justify-center" key={name}>
                 <Image
                   draggable={false}
                   width={210}
