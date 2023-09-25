@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ColorChip } from "@/app/components/ui/sections/hero/PhoneAddToCard";
 import { PlayState } from "react-gsap";
 import { cn } from "@/lib/utils";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 
 const images = [
   "front.webp",
@@ -19,13 +20,13 @@ function ScaleColoredArea({ color }: { color: string }) {
     <>
       <div
         className={cn(
-          "absolute z-0 aspect-square w-[max(150vh,150vw)] scale-0 rounded-full bg-black transition-transform duration-1000",
+          "absolute z-0 aspect-square w-[max(150vh,150vw)] scale-0 rounded-full bg-black transition-transform delay-1000 duration-[1.75s]",
           color === "black" ? "z-10 scale-100" : "delay-1000 duration-0"
         )}
       ></div>
       <div
         className={cn(
-          "absolute z-0 aspect-square w-[max(150vh,150vw)] scale-0 rounded-full bg-white transition-transform duration-1000",
+          "absolute z-0 aspect-square w-[max(150vh,150vw)]  scale-0 rounded-full bg-white transition-transform delay-1000 duration-[1.75s]",
           color === "withe" ? "z-10 scale-100" : "delay-1000 duration-0"
         )}
       ></div>
@@ -36,37 +37,66 @@ function ScaleColoredArea({ color }: { color: string }) {
 const Colored = () => {
   const [theme, setTheme] = useState("black");
   const [playState, setPlayState] = useState(PlayState.pause);
+  const witheVariants = {
+    init: (index) => ({ y: (index + 3) * 75 * -1, opacity: 0 }),
+    coming: (index) => ({ opacity: 1, y: 0 }),
+    exit: (index) => ({ y: index * 75, opacity: 0 }),
+  } as Variants;
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden py-44">
+    <section
+      className={cn(
+        "relative flex min-h-screen items-center overflow-hidden py-44",
+        theme === "black" ? "bg-white" : "bg-black"
+      )}
+    >
       <div className="container mx-auto flex flex-col">
         <div className="relative z-50 flex h-96 flex-row-reverse">
-          <div className="absolute inset-0 flex gap-5">
-            {images.map((name) => (
-              <div className="flex flex-1 justify-center" key={name}>
-                <Image
-                  draggable={false}
-                  width={210}
-                  height={430}
-                  className="object-contain object-center"
-                  src={`/images/black/${name}`}
-                  alt={`Nothing phone - ${name.replace(".webp", "")}`}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="absolute inset-0 flex gap-5">
-            {images.map((name) => (
-              <div className="flex flex-1 justify-center" key={name}>
-                <Image
-                  draggable={false}
-                  width={210}
-                  height={430}
-                  className="object-contain object-center"
-                  src={`/images/white/${name}`}
-                  alt={`Nothing phone - ${name.replace(".webp", "")}`}
-                />
-              </div>
-            ))}
+          <div className="absolute inset-0 flex flex-row-reverse gap-5">
+            <AnimatePresence mode="wait">
+              {theme === "black"
+                ? images.map((name, index) => (
+                    <motion.div
+                      transition={{ duration: 1 }}
+                      custom={index}
+                      initial={"init"}
+                      exit={"exit"}
+                      animate={"coming"}
+                      variants={witheVariants}
+                      className="flex flex-1 justify-center"
+                      key={name}
+                    >
+                      <Image
+                        draggable={false}
+                        width={210}
+                        height={430}
+                        className="object-contain object-center"
+                        src={`/images/black/${name}`}
+                        alt={`Nothing phone - ${name.replace(".webp", "")}`}
+                      />
+                    </motion.div>
+                  ))
+                : images.map((name, index) => (
+                    <motion.div
+                      transition={{ duration: 1 }}
+                      custom={index}
+                      initial={"init"}
+                      exit={"exit"}
+                      animate={"coming"}
+                      variants={witheVariants}
+                      className="flex flex-1 justify-center"
+                      key={name + "dark"}
+                    >
+                      <Image
+                        draggable={false}
+                        width={210}
+                        height={430}
+                        className="object-contain object-center"
+                        src={`/images/white/${name}`}
+                        alt={`Nothing phone - ${name.replace(".webp", "")}`}
+                      />
+                    </motion.div>
+                  ))}
+            </AnimatePresence>
           </div>
         </div>
         <div

@@ -40,7 +40,7 @@ export function ColorChip({
   HTMLInputElement
 >) {
   return (
-    <label className="relative z-20 flex h-16 cursor-pointer items-center gap-3 pt-1 text-body text-gray-50">
+    <label className="relative z-50 flex h-16 cursor-pointer items-center gap-3 pt-1 text-body text-gray-50">
       <input
         {...props}
         checked={checked}
