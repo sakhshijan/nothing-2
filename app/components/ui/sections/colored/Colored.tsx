@@ -108,6 +108,7 @@ const Colored = () => {
             onChange={(e) =>
               setTheme(() => (e.target.checked ? "black" : "withe"))
             }
+            checked={theme === "black"}
             name={"theme"}
             value={"black"}
             color="#000"
@@ -117,6 +118,7 @@ const Colored = () => {
             onChange={(e) =>
               setTheme(() => (e.target.checked ? "withe" : "black"))
             }
+            checked={theme === "withe"}
             name={"theme"}
             value={"withe"}
             color="#fff"
