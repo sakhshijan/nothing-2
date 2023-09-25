@@ -127,7 +127,7 @@ const Colored = () => {
         <div className="relative z-50 mt-52">
           <p
             className={cn(
-              "text-justify text-body font-light text-gray-50 transition-colors duration-1000 selection:bg-gray-50 selection:text-neutral-950",
+              "text-justify text-body font-light text-gray-50 transition-colors delay-1000 duration-1000 selection:bg-gray-50 selection:text-neutral-950",
               { "text-gray-900": theme === "withe" }
             )}
           >
