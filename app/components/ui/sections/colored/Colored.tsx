@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { ColorChip } from "@/app/components/ui/sections/hero/PhoneAddToCard";
 import { PlayState } from "react-gsap";
+import { cn } from "@/lib/utils";
 
 const images = [
   "front.webp",
@@ -12,13 +13,33 @@ const images = [
   "rear-25.webp",
   "rear.webp",
 ];
+
+function ScaleColoredArea({ color }: { color: string }) {
+  return (
+    <>
+      <div
+        className={cn(
+          "absolute z-0 aspect-square w-[max(150vh,150vw)] scale-0 rounded-full bg-black transition-transform duration-1000",
+          color === "black" ? "z-10 scale-100" : "delay-1000 duration-0"
+        )}
+      ></div>
+      <div
+        className={cn(
+          "absolute z-0 aspect-square w-[max(150vh,150vw)] scale-0 rounded-full bg-white transition-transform duration-1000",
+          color === "withe" ? "z-10 scale-100" : "delay-1000 duration-0"
+        )}
+      ></div>
+    </>
+  );
+}
+
 const Colored = () => {
   const [theme, setTheme] = useState("black");
   const [playState, setPlayState] = useState(PlayState.pause);
   return (
-    <section className="flex min-h-screen items-center py-44">
+    <section className="relative flex min-h-screen items-center overflow-hidden py-44">
       <div className="container mx-auto flex flex-col">
-        <div className="relative flex h-96 flex-row-reverse">
+        <div className="relative z-50 flex h-96 flex-row-reverse">
           <div className="absolute inset-0 flex gap-5">
             {images.map((name) => (
               <div className="flex flex-1 justify-center" key={name}>
@@ -52,22 +73,34 @@ const Colored = () => {
           className="mt-20 flex items-center justify-center"
           onClick={() => setPlayState(PlayState.play)}
         >
+          <ScaleColoredArea color={theme} />
           <ColorChip
+            onChange={(e) =>
+              setTheme(() => (e.target.checked ? "black" : "withe"))
+            }
             name={"theme"}
             value={"black"}
             color="#000"
             onColor="#fff"
           />
           <ColorChip
+            onChange={(e) =>
+              setTheme(() => (e.target.checked ? "withe" : "black"))
+            }
             name={"theme"}
-            value={"with"}
+            value={"withe"}
             color="#fff"
             onColor="#000"
           />
         </div>
 
-        <div className="mt-52">
-          <p className="text-justify text-body font-light text-gray-50 selection:bg-gray-50 selection:text-neutral-950">
+        <div className="relative z-50 mt-52">
+          <p
+            className={cn(
+              "text-justify text-body font-light text-gray-50 transition-colors duration-1000 selection:bg-gray-50 selection:text-neutral-950",
+              { "text-gray-900": theme === "withe" }
+            )}
+          >
             در مورد این مورد رابط Glyph جدید: اطلاعات کلیدی در یک لحظه. توالی
             های مختلف نور و صدا را به هر مخاطب و نوع اعلان اختصاص دهید. از چراغ
             ها برای ردیابی تکامل یا ایجاد آهنگ های زنگ با Glyph Composer استفاده
