@@ -21,13 +21,13 @@ function ScaleColoredArea({ color }: { color: string }) {
       <div
         className={cn(
           "absolute z-0 aspect-square w-[max(150vh,150vw)] scale-0 rounded-full bg-black transition-transform delay-1000 duration-[1.75s]",
-          color === "black" ? "z-10 scale-100" : "delay-1000 duration-0"
+          color === "black" ? "scale-100" : "delay-1000 duration-0"
         )}
       ></div>
       <div
         className={cn(
           "absolute z-0 aspect-square w-[max(150vh,150vw)]  scale-0 rounded-full bg-white transition-transform delay-1000 duration-[1.75s]",
-          color === "withe" ? "z-10 scale-100" : "delay-1000 duration-0"
+          color === "withe" ? "scale-100" : "delay-1000 duration-0"
         )}
       ></div>
     </>
