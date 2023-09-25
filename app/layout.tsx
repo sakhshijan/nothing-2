@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="fa" dir="rtl" className="dark">
       <body
         className={`${KalamehFont.className}  flex min-h-screen flex-col bg-neutral-950`}
       >
