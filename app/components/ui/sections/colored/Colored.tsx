@@ -66,6 +66,7 @@ const Colored = () => {
                       key={name}
                     >
                       <Image
+                        loading={"eager"}
                         draggable={false}
                         width={210}
                         height={430}
@@ -87,6 +88,7 @@ const Colored = () => {
                       key={name + "dark"}
                     >
                       <Image
+                        loading={"eager"}
                         draggable={false}
                         width={210}
                         height={430}
