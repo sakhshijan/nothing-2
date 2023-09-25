@@ -50,7 +50,7 @@ const Colored = () => {
       )}
     >
       <div className="container mx-auto flex flex-col">
-        <div className="relative z-50 flex h-96 flex-row-reverse">
+        <div className="relative z-10 flex h-96 flex-row-reverse">
           <div className="absolute inset-0 flex flex-row-reverse gap-5">
             <AnimatePresence mode="wait">
               {theme === "black"
