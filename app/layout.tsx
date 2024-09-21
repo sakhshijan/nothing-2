@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import KalamehFont from "@/font/kalameh";
+import Lenis from "@/app/lenis";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,9 @@ export default function RootLayout({
       <body
         className={`${KalamehFont.className}  flex min-h-screen flex-col bg-neutral-950`}
       >
-        {children}
+        <Lenis>
+          {children}
+        </Lenis>
       </body>
     </html>
   );
